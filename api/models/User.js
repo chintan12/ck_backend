@@ -24,6 +24,10 @@ module.exports = {
     isDeleted:{
       type:'boolean',
       defaultsTo: false
+    },
+    contacts: {
+      collection: 'usercontacts',
+      via: 'users'
     }
 
   },

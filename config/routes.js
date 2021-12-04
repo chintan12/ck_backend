@@ -37,5 +37,8 @@ module.exports.routes = {
   "POST     /user/create": "UserController.create",
   "PUT      /user/updateone/:id": "UserController.updateone",
   "DELETE   /user/deleteone/:id": "UserController.deleteone",
-  "DELETE   /user/delete/": "UserController.softDelete"
+  "DELETE   /user/delete/": "UserController.softDelete",
+
+  "POST     /contact/create": "UserContactsController.create",
+
 };

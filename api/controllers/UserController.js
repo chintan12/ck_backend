@@ -10,7 +10,7 @@
 module.exports = {
 
     list: function (req, res) {
-        User.find().exec(function (err, result) {
+        User.find().populate('contacts').exec(function (err, result) {
             if (err) return (err);
             return res.json(result);
         });
