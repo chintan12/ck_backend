@@ -26,6 +26,38 @@ module.exports = {
             if (err) return (err);
             return res.json(category);
         });
+
+    },
+
+    list: function (req, res) {
+        let userId = req.param('user');
+        
+        UserContacts.find({
+            where: {
+                users: userId
+            }
+        }).exec(function (err, result) {
+            if (err) return (err);
+            return res.json(result);
+        });
+        
+    },
+
+    deleteone: function (req, res) {
+        
+        let valuesToSet;
+        valuesToSet = { 
+            isDeleted: true
+        }
+
+        let criteria = {
+            id: req.param('id').split(',')
+        }
+        
+        UserContacts.update(criteria).set(valuesToSet).exec(function (err, category) {
+            if (err) return (err);
+            return res.json(category);
+        });
         
     },
 

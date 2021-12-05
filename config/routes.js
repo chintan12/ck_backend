@@ -40,5 +40,7 @@ module.exports.routes = {
   "DELETE   /user/delete/": "UserController.softDelete",
 
   "POST     /contact/create": "UserContactsController.create",
+  "GET      /contact/list": "UserContactsController.list",
+  "DELETE   /contact/deleteone/:id": "UserContactsController.deleteone",
 
 };
